@@ -44,6 +44,8 @@ Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj 
 
 
 ## Simulación de Membranas (Modo Grabación/Automático)
+![Membrana radial](Propagacion_Membrana/demo-simulacion-membrana.gif)
+
 Este código está configurado para exportar un archivo de video llamado simulacion_resortes.mp4.
 
 Fijado de bordes: Utiliza la función fijar_borde_automatico que detecta los límites exteriores de la malla y los mantiene estáticos, ideal para simular parches de percusión.
