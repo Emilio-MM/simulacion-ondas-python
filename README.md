@@ -5,7 +5,7 @@ Este repositorio contiene un entorno de simulación interactiva diseñado para a
 ## Estructura del Proyecto
 El repositorio se divide en dos secciones principales, cada una ubicada en su propia carpeta:
 
-### Simulacion_Cubo: Enfocada en la manipulación manual. Permite interactuar con un objeto 3D (cubo) utilizando el mouse para agarrar vértices y observar la propagación de ondas mecánicas.
+## Simulacion_Cubo: Enfocada en la manipulación manual. Permite interactuar con un objeto 3D (cubo) utilizando el mouse para agarrar vértices y observar la propagación de ondas mecánicas.
 
 Simulacion_Membranas: Orientada al análisis de membranas (como tambores o telas). Incluye funciones de fijado automático de bordes y modos de movimiento radial o por rebanadas para simular impactos o vibraciones controladas.
 
@@ -43,7 +43,7 @@ Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj 
 3.Manipulación: Haz clic sobre un vértice o cara del cubo y arrastra el mouse. El código detectará el punto más cercano en pantalla, calculará la deformación y activará la respuesta elástica al soltarlo.
 
 
-### Simulación de Membranas (Modo Grabación/Automático)
+## Simulación de Membranas (Modo Grabación/Automático)
 Este código está configurado para exportar un archivo de video llamado simulacion_resortes.mp4.
 
 Fijado de bordes: Utiliza la función fijar_borde_automatico que detecta los límites exteriores de la malla y los mantiene estáticos, ideal para simular parches de percusión.
