@@ -7,7 +7,7 @@ El repositorio se divide en dos secciones principales, cada una ubicada en su pr
 
 Simulacion del Cubo: Enfocada en la manipulación manual. Permite interactuar con un objeto 3D (cubo) utilizando el mouse para agarrar vértices y observar la propagación de ondas mecánicas.
 
-Simulacion_Membranas: Orientada al análisis de membranas (como tambores o telas). Incluye funciones de fijado automático de bordes y modos de movimiento radial o por rebanadas para simular impactos o vibraciones controladas.
+Simulacion de Membranas: Orientada al análisis de membranas (como tambores o telas). Incluye funciones de fijado automático de bordes y modos de movimiento radial o por rebanadas para simular impactos o vibraciones controladas.
 
 ## Cada carpeta incluye:
 -El código fuente en Python (.py).    
