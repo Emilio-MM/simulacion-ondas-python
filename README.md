@@ -43,7 +43,7 @@ Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj 
 
 
 ## Simulación de Membranas (Modo Grabación/Automático)
-![Membrana radial](Propagacion-Membrana/demo-simulacion-membrana.gif)
+![Membrana radial](Propagación-Membrana/demo-simulacion-membrana.gif)
 
 Este código está configurado para exportar un archivo de video llamado simulacion_resortes.mp4.
 
