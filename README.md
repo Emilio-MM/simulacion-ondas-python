@@ -37,6 +37,7 @@ El comportamiento de los materiales se puede ajustar modificando las variables d
 Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj correspondiente esté en la misma carpeta que el código.
 
 ## Simulación del Cubo (Interacción Manual)
+![Propagacion en Cubo](Propagacion-Cubo/demo-simulacion-cubo.gif)
 1.Ejecuta el programa. Se abrirá una ventana de visualización.  
 2.Cámara: Usa el clic izquierdo en el fondo para rotar la perspectiva.  
 3.Manipulación: Haz clic sobre un vértice o cara del cubo y arrastra el mouse. El código detectará el punto más cercano en pantalla, calculará la deformación y activará la respuesta elástica al soltarlo.  
