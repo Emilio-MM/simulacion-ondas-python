@@ -9,24 +9,24 @@ Simulacion del Cubo: Enfocada en la manipulación manual. Permite interactuar co
 
 Simulacion_Membranas: Orientada al análisis de membranas (como tambores o telas). Incluye funciones de fijado automático de bordes y modos de movimiento radial o por rebanadas para simular impactos o vibraciones controladas.
 
-#### Cada carpeta incluye:
--El código fuente en Python (.py).
--Un archivo de malla geométrica (.obj) necesario para la ejecución.
+## Cada carpeta incluye:
+-El código fuente en Python (.py).    
+-Un archivo de malla geométrica (.obj) necesario para la ejecución.  
 -Videos de ejemplo (.mp4 / .gif) que muestran el comportamiento esperado del programa.
 
-#### Requisitos Técnicos
+## Requisitos Técnicos
 Debido a que el cálculo de físicas se delega a la tarjeta gráfica, es indispensable contar con el siguiente hardware y software:
 -GPU: Tarjeta NVIDIA compatible con la arquitectura CUDA (probado en RTX 3050 Ti).
 -Software: NVIDIA CUDA Toolkit instalado en el sistema.
 
-#### Librerías de Python:
+## Librerías de Python:
 -cupy: Procesamiento en paralelo en GPU.
 -vispy: Renderizado y visualización 3D interactiva.
 -numpy: Manejo de datos y arreglos.
 -matplotlib: Generación de mapas de colores térmicos.
 -imageio: Grabación y exportación de video (requerido para el modo video).
 
-#### Configuración y Personalización
+## Configuración y Personalización
 El comportamiento de los materiales se puede ajustar modificando las variables dentro de la sección de CONSTANTES RESORTES en cada script:
 -k: Constante de rigidez del resorte (determina qué tan "duro" es el material).
 -m: Masa de cada punto (influye en la inercia del objeto).
@@ -34,10 +34,10 @@ El comportamiento de los materiales se puede ajustar modificando las variables d
 -L0: Longitud natural de los resortes (distancia de reposo entre puntos).
 -e: Coeficiente de restitución (constante de rebote contra el suelo).
 
-#### Instrucciones de Uso
+## Instrucciones de Uso
 Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj correspondiente esté en la misma carpeta que el código.
 
-#### Simulación del Cubo (Interacción Manual)
+## Simulación del Cubo (Interacción Manual)
 1.Ejecuta el programa. Se abrirá una ventana de visualización.
 2.Cámara: Usa el clic izquierdo en el fondo para rotar la perspectiva.
 3.Manipulación: Haz clic sobre un vértice o cara del cubo y arrastra el mouse. El código detectará el punto más cercano en pantalla, calculará la deformación y activará la respuesta elástica al soltarlo.
