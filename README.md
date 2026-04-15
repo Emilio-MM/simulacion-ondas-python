@@ -2,7 +2,7 @@
 Este repositorio contiene un entorno de simulación interactiva diseñado para analizar la dinámica de cuerpos blandos y membranas elásticas mediante sistemas de masa-resorte. El núcleo del proyecto utiliza kernels de CUDA escritos en C++ y ejecutados a través de CuPy para procesar miles de cálculos de fuerzas y posiciones en paralelo, permitiendo simulaciones fluidas en tiempo real o generación de video de alta fidelidad.
 
 <div align="center">
-  <img src="Propagación-Membrana/demo-simulacion-membrana.gif" width="400" />
+  <img src="Propagación-Membrana/demo-simulacion-membrana.gif" width="250" />
   <img src="Propagación-Membrana/demo-simulacion-membrana-ejex.gif" width="400" />
 </div>
 
