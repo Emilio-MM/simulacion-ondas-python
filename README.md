@@ -2,7 +2,7 @@
 Este repositorio contiene un entorno de simulación interactiva diseñado para analizar la dinámica de cuerpos blandos y membranas elásticas mediante sistemas de masa-resorte. El núcleo del proyecto utiliza kernels de CUDA escritos en C++ y ejecutados a través de CuPy para procesar miles de cálculos de fuerzas y posiciones en paralelo, permitiendo simulaciones fluidas en tiempo real o generación de video de alta fidelidad.
 
 <div align="center">
-  <img src="Propagación-Membrana/demo-simulacion-lamina.gif" width="500" />
+  <img src="Propagación-Membrana/demo-simulacion-membrana.gif" width="500" />
 </div>
 
 ## Estructura del Proyecto
@@ -41,14 +41,19 @@ El comportamiento de los materiales se puede ajustar modificando las variables d
 Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj correspondiente esté en la misma carpeta que el código.
 
 ## Simulación del Cubo (Interacción Manual)
-![Propagacion en Cubo](Propagacion-Cubo/demo-simulacion-cubo.gif)
+<div align="center">
+  <img src="Propagacion-Cubo/demo-simulacion-cubo.gif" width="500" />
+</div>
+
 1.Ejecuta el programa. Se abrirá una ventana de visualización.  
 2.Cámara: Usa el clic izquierdo en el fondo para rotar la perspectiva.  
 3.Manipulación: Haz clic sobre un vértice o cara del cubo y arrastra el mouse. El código detectará el punto más cercano en pantalla, calculará la deformación y activará la respuesta elástica al soltarlo.  
 
 
 ## Simulación de Membranas (Modo Grabación/Automático)
-![Membrana radial](Propagación-Membrana/demo-simulacion-membrana.gif)
+<div align="center">
+  <img src="Propagación-Membrana/demo-simulacion-lamina.gif" width="500" />
+</div>
 
 Este código está configurado para exportar un archivo de video llamado simulacion_resortes.mp4.
 
