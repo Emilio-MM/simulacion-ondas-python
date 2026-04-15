@@ -1,8 +1,9 @@
 # Simulaciones Físicas con Aceleración por GPU (CUDA)
 Este repositorio contiene un entorno de simulación interactiva diseñado para analizar la dinámica de cuerpos blandos y membranas elásticas mediante sistemas de masa-resorte. El núcleo del proyecto utiliza kernels de CUDA escritos en C++ y ejecutados a través de CuPy para procesar miles de cálculos de fuerzas y posiciones en paralelo, permitiendo simulaciones fluidas en tiempo real o generación de video de alta fidelidad.
 
-![Propagacion en Cubo](Propagación-Membrana/demo-simulacion-lamina.gif)
-
+<div align="center">
+  <img src="Propagación-Membrana/demo-simulacion-lamina.gif" width="500" />
+</div>
 
 ## Estructura del Proyecto
 El repositorio se divide en dos secciones principales, cada una ubicada en su propia carpeta:
