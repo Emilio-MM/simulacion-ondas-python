@@ -1,72 +1,67 @@
-# Simulaciones Físicas con Aceleración por GPU (CUDA)
-Este repositorio contiene un entorno de simulación interactiva diseñado para analizar la dinámica de cuerpos blandos y membranas elásticas mediante sistemas de masa-resorte. El núcleo del proyecto utiliza kernels de CUDA escritos en C++ y ejecutados a través de CuPy para procesar miles de cálculos de fuerzas y posiciones en paralelo, permitiendo simulaciones fluidas en tiempo real o generación de video de alta fidelidad.
+# GPU-Accelerated Physics Simulations (CUDA)
+
+This repository contains an interactive simulation environment designed to analyze the dynamics of soft bodies and elastic membranes using mass-spring systems. The core of the project utilizes CUDA kernels written in C++ and executed through CuPy to process thousands of force and position calculations in parallel, enabling smooth real-time simulations or high-fidelity video generation.
 
 <div align="center">
   <img src="Propagación-Membrana/demo-simulacion-membrana.gif" width="250" />
   <img src="Propagación-Membrana/demo-simulacion-membrana-ejex.gif" width="400" />
 </div>
 
-## Estructura del Proyecto
-El repositorio se divide en dos secciones principales, cada una ubicada en su propia carpeta:
+## Project Structure
+The repository is divided into two main sections, each located in its own folder:
 
-Simulacion del Cubo: Enfocada en la manipulación manual. Permite interactuar con un objeto 3D (cubo) utilizando el mouse para agarrar vértices y observar la propagación de ondas mecánicas.
+* **Cube Simulation:** Focused on manual manipulation. It allows interacting with a 3D object (cube) using the mouse to grab vertices and observe the propagation of mechanical waves.
+* **Membrane Simulation:** Oriented toward the analysis of membranes (like drums or fabrics). It includes functions for automatic edge pinning and radial or slice movement modes to simulate controlled impacts or vibrations.
 
-Simulacion de Membranas: Orientada al análisis de membranas (como tambores o telas). Incluye funciones de fijado automático de bordes y modos de movimiento radial o por rebanadas para simular impactos o vibraciones controladas.
+### Each folder includes:
+* The Python source code (`.py`).  
+* A geometric mesh file (`.obj`) required for execution.  
+* Example videos (`.mp4` / `.gif`) showing the expected behavior of the program.
 
-## Cada carpeta incluye:
--El código fuente en Python (.py).    
--Un archivo de malla geométrica (.obj) necesario para la ejecución.  
--Videos de ejemplo (.mp4 / .gif) que muestran el comportamiento esperado del programa.
+## Technical Requirements
+Since physics calculations are delegated to the graphics card, the following hardware and software are essential:  
+* **GPU:** NVIDIA card compatible with CUDA architecture (tested on an RTX 3050 Ti).  
+* **Software:** NVIDIA CUDA Toolkit installed on the system.  
 
-## Requisitos Técnicos
-Debido a que el cálculo de físicas se delega a la tarjeta gráfica, es indispensable contar con el siguiente hardware y software:  
--GPU: Tarjeta NVIDIA compatible con la arquitectura CUDA (probado en RTX 3050 Ti).  
--Software: NVIDIA CUDA Toolkit instalado en el sistema.  
+### Python Libraries:  
+* `cupy`: GPU parallel processing.  
+* `vispy`: Interactive 3D rendering and visualization.  
+* `numpy`: Data and array handling.  
+* `matplotlib`: Thermal color map generation.  
+* `imageio`: Video recording and export (required for video mode).  
 
-## Librerías de Python:  
--cupy: Procesamiento en paralelo en GPU.  
--vispy: Renderizado y visualización 3D interactiva.  
--numpy: Manejo de datos y arreglos.  
--matplotlib: Generación de mapas de colores térmicos.  
--imageio: Grabación y exportación de video (requerido para el modo video).  
+## Configuration and Customization  
+The behavior of the materials can be adjusted by modifying the variables within the `SPRING CONSTANTS` section in each script:  
+* `k`: Spring stiffness constant (determines how "hard" the material is).  
+* `m`: Mass of each point (influences the object's inertia).  
+* `damping`: Damping factor (energy loss due to internal friction).  
+* `L0`: Natural spring length (resting distance between points).  
+* `e`: Coefficient of restitution (bounce constant against the ground).  
 
-## Configuración y Personalización  
-El comportamiento de los materiales se puede ajustar modificando las variables dentro de la sección de CONSTANTES RESORTES en cada script:  
--k: Constante de rigidez del resorte (determina qué tan "duro" es el material).  
--m: Masa de cada punto (influye en la inercia del objeto).  
--damping: Factor de amortiguamiento (pérdida de energía por fricción interna).  
--L0: Longitud natural de los resortes (distancia de reposo entre puntos).  
--e: Coeficiente de restitución (constante de rebote contra el suelo).  
+## Usage Instructions
+To run any of the simulations, ensure the corresponding `.obj` file is in the same folder as the code.
 
-## Instrucciones de Uso
-Para ejecutar cualquiera de las simulaciones, asegúrate de que el archivo .obj correspondiente esté en la misma carpeta que el código.
-
-## Simulación del Cubo (Interacción Manual)
+### Cube Simulation (Manual Interaction)
 <div align="center">
   <img src="Propagacion-Cubo/demo-simulacion-cubo.gif" width="500" />
 </div>
 
-1.Ejecuta el programa. Se abrirá una ventana de visualización.  
-2.Cámara: Usa el clic izquierdo en el fondo para rotar la perspectiva.  
-3.Manipulación: Haz clic sobre un vértice o cara del cubo y arrastra el mouse. El código detectará el punto más cercano en pantalla, calculará la deformación y activará la respuesta elástica al soltarlo.  
+1. Run the program. A viewing window will open.  
+2. **Camera:** Use left-click on the background to rotate the perspective.  
+3. **Manipulation:** Click on a vertex or face of the cube and drag the mouse. The code will detect the closest point on the screen, calculate the deformation, and trigger the elastic response upon release.  
 
-
-## Simulación de Membranas (Modo Grabación/Automático)
+### Membrane Simulation (Recording/Automatic Mode)
 <div align="center">
   <img src="Propagación-Membrana/demo-simulacion-lamina.gif" width="500" />
 </div>
 
-Este código está configurado para exportar un archivo de video llamado simulacion_resortes.mp4.
+This code is configured to export a video file named `simulacion_resortes.mp4`.
 
-Fijado de bordes: Utiliza la función fijar_borde_automatico que detecta los límites exteriores de la malla y los mantiene estáticos, ideal para simular parches de percusión.
+* **Edge pinning:** Uses the `fijar_borde_automatico` function, which detects the outer limits of the mesh and keeps them static, ideal for simulating percussion drumheads.
+* **Selection mode:** Allows applying forces in three ways:
+  * *Normal:* Selects a flat slice of the object.
+  * *Extreme:* Selects specific edges on the X, Y, or Z axes.
+  * *Radial:* Affects a group of vertices within a sphere of influence around a central point.
 
-Modo de selección: Permite aplicar fuerzas de tres formas:
-
-Normal: Selecciona una rebanada plana del objeto.
-
-Extremo: Selecciona bordes específicos en los ejes X, Y o Z.
-
-Radial: Afecta a un grupo de vértices dentro de una esfera de influencia alrededor de un punto central.
-
-Análisis Visual
-El sistema incluye un mapa de calor dinámico. Los vértices y aristas cambian de color (del azul al rojo) en tiempo real según la magnitud de la fuerza elástica acumulada en esa zona, permitiendo identificar puntos de máxima tensión mecánica durante la vibración.
+## Visual Analysis
+The system includes a dynamic heatmap. Vertices and edges change color (from blue to red) in real-time based on the magnitude of the accumulated elastic force in that area, allowing the identification of points of maximum mechanical stress during vibration.
